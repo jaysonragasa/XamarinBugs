@@ -4,13 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinBugs.MainPage">
+             x:Class="XamarinBugs.MainPage"
+             
+             x:Name="this"
+             BindingContext="{Binding Source={StaticResource Locator}}"
+             >
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Picker ItemsSource="{Binding MainPage.PickerSource}" 
+                ItemDisplayBinding="{Binding DisplayName}"
+                SelectedItem="{Binding BindingContext.MainPage.SelectedItem, Source={x:Reference this}}"
+                >
+            
+        </Picker>
     </StackLayout>
 
 </ContentPage>

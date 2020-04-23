@@ -1,7 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using XamarinBugs.Models;
 
 namespace XamarinBugs.ViewModels
 {
@@ -16,7 +17,19 @@ namespace XamarinBugs.ViewModels
         #endregion
 
         #region properties
+        public ObservableCollection<Model_PickerData> PickerSource { get; set; } = new ObservableCollection<Model_PickerData>();
 
+        private Model_PickerData _SelectedItem = new Model_PickerData();
+        public Model_PickerData SelectedItem
+        {
+            get { return _SelectedItem; }
+            set
+            {
+                Set(nameof(SelectedItem), ref _SelectedItem, value);
+
+                Debug.WriteLine("DEBUG> SelectedItem called. Is value null? " + (value == null ? "YES" : "NO") );
+            }
+        }
         #endregion
 
         #region commands
@@ -58,7 +71,31 @@ namespace XamarinBugs.ViewModels
 
         void RuntimeData()
         {
+            this.PickerSource.Add(new Model_PickerData()
+            {
+                Id = "0",
+                DisplayName = "zero"
+            });
 
+            this.PickerSource.Add(new Model_PickerData()
+            {
+                Id = "1",
+                DisplayName = "one"
+            });
+
+            this.PickerSource.Add(new Model_PickerData()
+            {
+                Id = "2",
+                DisplayName = "two"
+            });
+
+            this.PickerSource.Add(new Model_PickerData()
+            {
+                Id = "3",
+                DisplayName = "three"
+            });
+
+            this.SelectedItem = this.PickerSource[1];
         }
 
         public async Task RefreshData()
