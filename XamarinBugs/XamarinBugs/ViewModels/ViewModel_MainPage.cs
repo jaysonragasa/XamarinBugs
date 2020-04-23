@@ -42,17 +42,6 @@ namespace XamarinBugs.ViewModels
         public ViewModel_MainPage()
         {
             InitCommands();
-
-            // used only in UWP & WPF
-            // or anything that supports design time updates
-            if (base.IsInDesignMode)
-            {
-                DesignData();
-            }
-            else
-            {
-                RuntimeData();
-            }
         }
         #endregion
 
@@ -72,6 +61,11 @@ namespace XamarinBugs.ViewModels
         }
 
         void RuntimeData()
+        {
+            
+        }
+
+        public async Task RefreshData()
         {
             this.PickerSource.Add(new Model_PickerData()
             {
@@ -97,12 +91,7 @@ namespace XamarinBugs.ViewModels
                 DisplayName = "three"
             });
 
-            this.SelectedItem = this.PickerSource[1];
-        }
-
-        public async Task RefreshData()
-        {
-
+            this.SelectedItem = this.PickerSource[3];
         }
         #endregion
     }
