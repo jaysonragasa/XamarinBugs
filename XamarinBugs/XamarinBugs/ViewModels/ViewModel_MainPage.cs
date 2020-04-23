@@ -97,7 +97,7 @@ namespace XamarinBugs.ViewModels
                 DisplayName = "three"
             });
 
-            //this.SelectedItem = this.PickerSource[1];
+            this.SelectedItem = this.PickerSource[1];
         }
 
         public async Task RefreshData()
