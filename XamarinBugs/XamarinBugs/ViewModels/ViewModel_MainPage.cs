@@ -13,7 +13,7 @@ namespace XamarinBugs.ViewModels
         #endregion
 
         #region vars
-
+        int _callIndex = 0;
         #endregion
 
         #region properties
@@ -27,7 +27,9 @@ namespace XamarinBugs.ViewModels
             {
                 Set(nameof(SelectedItem), ref _SelectedItem, value);
 
-                Debug.WriteLine("DEBUG> SelectedItem called. Is value null? " + (value == null ? "YES" : "NO") );
+                this._callIndex++;
+
+                Debug.WriteLine($"DEBUG> call index{this._callIndex} | SelectedItem called. Is value null? " + (value == null ? "YES" : "NO") );
             }
         }
         #endregion
@@ -95,7 +97,7 @@ namespace XamarinBugs.ViewModels
                 DisplayName = "three"
             });
 
-            this.SelectedItem = this.PickerSource[1];
+            //this.SelectedItem = this.PickerSource[1];
         }
 
         public async Task RefreshData()
