@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinBugs.ViewModels;
 
 namespace XamarinBugs
 {
@@ -16,6 +17,8 @@ namespace XamarinBugs
         public MainPage()
         {
             InitializeComponent();
+
+            ((ViewModelLocator)this.BindingContext).MainPage.RefreshData();
         }
     }
 }

@@ -73,6 +73,11 @@ namespace XamarinBugs.ViewModels
 
         void RuntimeData()
         {
+            
+        }
+
+        public async Task RefreshData()
+        {
             this.PickerSource.Add(new Model_PickerData()
             {
                 Id = "0",
@@ -98,11 +103,6 @@ namespace XamarinBugs.ViewModels
             });
 
             this.SelectedItem = this.PickerSource[1];
-        }
-
-        public async Task RefreshData()
-        {
-
         }
         #endregion
     }

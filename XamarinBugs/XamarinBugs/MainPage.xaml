@@ -14,7 +14,11 @@
         <Label Text="XF 4.5.0.657" />
         <Picker ItemsSource="{Binding MainPage.PickerSource}" 
                 ItemDisplayBinding="{Binding DisplayName}"
-                SelectedItem="{Binding BindingContext.MainPage.SelectedItem, Source={x:Reference this}}"
+                SelectedItem="{
+                    Binding BindingContext.MainPage.SelectedItem, 
+                    Source={x:Reference this},
+                    Mode=OneTime
+                    }"
                 >
             
         </Picker>
