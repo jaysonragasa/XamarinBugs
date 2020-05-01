@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="XamarinBugs.AppShell"
+        xmlns:pages="clr-namespace:XamarinBugs.Pages"
+       
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       >
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Orders" ContentTemplate="{DataTemplate pages:OrdersPage}" />
+
+        <Tab Title="Products">
+            <ShellContent Title="Items" ContentTemplate="{DataTemplate pages:ItemsPage}" />
+            <ShellContent Title="Categories" ContentTemplate="{DataTemplate pages:CategoriesPage}" />
+        </Tab>
+    </FlyoutItem>
+</Shell>

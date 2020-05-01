@@ -1,12 +1,14 @@
 ﻿using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using XamarinBugs.Models;
 
 namespace XamarinBugs.ViewModels
 {
-    public class ViewModel_MainPage : ViewModelBase
+    public class ViewModel_Category : ViewModelBase
     {
         #region events
 
@@ -17,7 +19,7 @@ namespace XamarinBugs.ViewModels
         #endregion
 
         #region properties
-
+        public ObservableCollection<Model_Categories> Categories { get; set; } = new ObservableCollection<Model_Categories>();
         #endregion
 
         #region commands
@@ -25,7 +27,7 @@ namespace XamarinBugs.ViewModels
         #endregion
 
         #region ctors
-        public ViewModel_MainPage()
+        public ViewModel_Category()
         {
             InitCommands();
 
@@ -64,7 +66,16 @@ namespace XamarinBugs.ViewModels
 
         public async Task RefreshData()
         {
+            this.Categories.Clear();
 
+            for(int i = 0; i < 10; i++)
+            {
+                this.Categories.Add(new Model_Categories()
+                {
+                    Id = i,
+                    CategoryName = "Category " + (i + 1)
+                });
+            }
         }
         #endregion
     }
