@@ -10,12 +10,12 @@
        FlyoutHeaderBehavior="CollapseOnScroll"
        >
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Orders" ContentTemplate="{DataTemplate pages:OrdersPage}" />
+<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    <ShellContent Title="Orders" ContentTemplate="{DataTemplate pages:OrdersPage}" />
 
-        <Tab Title="Products">
-            <ShellContent Title="Items" ContentTemplate="{DataTemplate pages:ItemsPage}" />
-            <ShellContent Title="Categories" ContentTemplate="{DataTemplate pages:CategoriesPage}" />
-        </Tab>
-    </FlyoutItem>
+    <Tab Title="Products">
+        <ShellContent Title="Items" ContentTemplate="{DataTemplate pages:ItemsPage}" />
+        <ShellContent Title="Categories" ContentTemplate="{DataTemplate pages:CategoriesPage}" />
+    </Tab>
+</FlyoutItem>
 </Shell>
