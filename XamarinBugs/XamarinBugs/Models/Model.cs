@@ -1,12 +1,13 @@
-﻿using GalaSoft.MvvmLight;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
-namespace XamarinBugs.ViewModels
+namespace XamarinBugs.Models
 {
-    public class ViewModel_MainPage : ViewModelBase
+    public class Model
     {
         #region events
 
@@ -25,20 +26,22 @@ namespace XamarinBugs.ViewModels
         #endregion
 
         #region ctors
-        public ViewModel_MainPage()
+        public Model()
         {
             InitCommands();
 
-            // used only in UWP & WPF
-            // or anything that supports design time updates
-            if (base.IsInDesignMode)
-            {
-                DesignData();
-            }
-            else
-            {
-                RuntimeData();
-            }
+            /*
+			// used only in UWP & WPF
+			// or anything that supports design time updates
+			if(base.IsInDesignMode)
+			{
+				DesignData();
+			}
+			else
+			{
+				RuntimeData();
+			}
+			*/
         }
         #endregion
 
