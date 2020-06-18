@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 
-using OmniGoo.Business.Services.Client;
-using OmniGoo.Common.Services;
-
 using System.ComponentModel;
 using Xamarin.Forms;
 
@@ -13,14 +10,6 @@ namespace XamarinBugs
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        BusinessClientServiceClient BusinessClientServiceClient = new BusinessClientServiceClient(null, null);
-        BusinessUserServiceClient BusinessUserServiceClient = new BusinessUserServiceClient(null, null);
-        ClientModelServiceClient ClientModelServiceClient = new ClientModelServiceClient(null, null);
-        ConversationServiceClient ConversationServiceClient = new ConversationServiceClient(null, null);
-        DailyMealServiceClient DailyMealServiceClient = new DailyMealServiceClient(null, null);
-        MessageServiceClient MessageServiceClient = new MessageServiceClient(null, null);
-        WajbatiOrderServiceClient WajbatiOrderServiceClient = new WajbatiOrderServiceClient(null, null);
-
         HubConnection _hub;
 
         public MainPage()
