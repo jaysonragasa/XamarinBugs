@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using XamarinBugs.Models;
 
 namespace XamarinBugs.ViewModels
 {
@@ -16,7 +16,7 @@ namespace XamarinBugs.ViewModels
         #endregion
 
         #region properties
-
+        public ObservableCollection<Model_PersonDetails> PersonCollection { get; set; } = new ObservableCollection<Model_PersonDetails>();
         #endregion
 
         #region commands
@@ -63,7 +63,15 @@ namespace XamarinBugs.ViewModels
 
         public async Task RefreshData()
         {
-
+            this.PersonCollection.Clear();
+            this.PersonCollection.Add(new Model_PersonDetails()
+            {
+                Fullname = "Jose Rizal"
+            });
+            this.PersonCollection.Add(new Model_PersonDetails()
+            {
+                Fullname = "Ramon Magsaysay"
+            });
         }
         #endregion
     }

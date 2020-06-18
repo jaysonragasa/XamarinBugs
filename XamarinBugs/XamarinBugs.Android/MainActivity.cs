@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Runtime;
+using Xamarin.Forms;
 
 namespace XamarinBugs.Droid
 {
@@ -17,6 +15,7 @@ namespace XamarinBugs.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            Forms.SetFlags("SwipeView_Experimental");
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

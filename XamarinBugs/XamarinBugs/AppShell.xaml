@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:page="clr-namespace:XamarinBugs"
+       mc:Ignorable="d"
+       x:Class="XamarinBugs.AppShell"
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       >
+
+    <!--<Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#FFE5E4E9</Color>
+
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource DefaultThemeAccentColor}" />
+                <Setter Property="Shell.TitleColor" Value="#FF2A2A2C" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource ShellDefaultUnselectedTitleColor}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource ShellDefaultUnselectedTitleColor}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ShellDefaultTitleColor}"/>
+                <Setter Property="Shell.NavBarHasShadow" Value="False" />
+            </Style>
+
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>-->
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="CollectionView" ContentTemplate="{DataTemplate page:MainPage}" />
+
+        <ShellContent Title="Coll" ContentTemplate="{DataTemplate page:MainPage}" />
+    </FlyoutItem>
+    
+</Shell>

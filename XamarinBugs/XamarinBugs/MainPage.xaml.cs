@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinBugs.ViewModels;
 
 namespace XamarinBugs
 {
@@ -16,6 +13,19 @@ namespace XamarinBugs
         public MainPage()
         {
             InitializeComponent();
+
+            
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var t = Task.Run(async () =>
+            {
+                await ((ViewModel_MainPage)this.BindingContext).RefreshData();
+            });
+            t.ConfigureAwait(false);
         }
     }
 }

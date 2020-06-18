@@ -4,13 +4,40 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XamarinBugs.MainPage">
+             x:Class="XamarinBugs.MainPage"
+             
+             xmlns:vm="clr-namespace:XamarinBugs.ViewModels"
+             Shell.TabBarIsVisible="False"
+             >
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage.BindingContext>
+        <vm:ViewModel_MainPage />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <CollectionView ItemsSource="{Binding PersonCollection}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView HeightRequest="50">
+                            <SwipeView.LeftItems>
+                                <SwipeItem Text="one" BackgroundColor="Green" />
+                            </SwipeView.LeftItems>
+
+                            <Grid>
+                                <Label Margin="10,0" Text="{Binding Fullname}" FontSize="Large" />
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.EmptyView>
+                    <Grid>
+                        <Label Text="No items to show" />
+                    </Grid>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
 
 </ContentPage>
